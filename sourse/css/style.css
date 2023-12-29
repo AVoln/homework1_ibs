@@ -1,0 +1,377 @@
+:root {
+  --basicDarkColor: #323232;
+  --basicWhiteColor: #ffffff;
+  --basicGreyColor: #959595;
+  --basicLightGreyColor: #f2f2f2;
+  --basicDarkGreyColor: #545454;
+  --secondPrimaryColor: #e97f03;
+  --hoverColor: #fbb667;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+body {
+  color: var(--basicDarkColor);
+  margin: 0;
+  font-family: 'Roboto', sans-serif, Arial;
+  font-size: 14px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.wrapper {
+  padding: 16px 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 24px;
+}
+
+.header-product {
+  padding: 16px 24px 24px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  transition: color 0.1s ease-in-out, border-bottom 0.1s ease-in-out;
+}
+
+.search:focus-within {
+  border-bottom: 2px solid var(--secondPrimaryColor);
+  color: var(--secondPrimaryColor);
+}
+
+.search:hover {
+  color: var(--secondPrimaryColor);
+}
+
+.search__icon {
+  padding: 8px;
+}
+
+.search form {
+  padding: 8px;
+}
+
+.search input {
+  border: none;
+}
+
+.search input::placeholder {
+  color: var(--basicDarkColor);
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.search input:focus::placeholder {
+  color: transparent;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  margin-right: -8px;
+}
+
+.account button {
+  border-radius: 10px;
+  transition: color 0.1s ease-in-out;
+}
+
+.account button:hover {
+  color: var(--secondPrimaryColor);
+}
+
+.account button:focus {
+  outline: none;
+  color: var(--secondPrimaryColor);
+}
+
+.account button:focus-visible {
+  outline: 2px solid var(--secondPrimaryColor);
+}
+
+.account__icon {
+  transform: translateY(2px);
+  padding: 8px;
+}
+
+.product__container {
+  display: flex;
+  padding: 0 24px;
+
+  @media (max-width: 870px) {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+
+.product__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  min-height: 300px;
+  border: 1px solid var(--basicLightGreyColor);
+
+  @media (max-width: 870px) {
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0) 50%
+    );
+  }
+}
+
+.product__info {
+  padding-left: 16px;
+
+  @media (max-width: 870px) {
+    padding: 0 24px;
+  }
+}
+
+.product__text {
+  padding-bottom: 23px;
+}
+
+.product__text span {
+  display: inline-block;
+}
+
+.product__text h2,
+.product__text h3 {
+  padding-bottom: 16px;
+}
+
+.product__text span:first-of-type {
+  padding-bottom: 16px;
+}
+
+.order {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @media (max-width: 490px) {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  @media (max-width: 350px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.order__price {
+  font-size: 36px;
+  color: var(--secondPrimaryColor);
+}
+
+.order__add-wrapper {
+  display: flex;
+  gap: 16px;
+
+  @media (max-width: 490px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 350px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.order__counter {
+  display: flex;
+  font-size: 24px;
+  line-height: 38px;
+  transition: color 0.1s ease-in-out;
+}
+
+.order__counter svg {
+  padding: 5px;
+  transform: translateY(1px);
+}
+
+.order__count {
+  text-align: center;
+  border: 1px solid var(--basicDarkColor);
+  padding: 0 52px;
+
+  @media (max-width: 870px) {
+    padding: 0 22px;
+  }
+}
+
+.order__counter button {
+  color: var(--secondPrimaryColor);
+  border: 1px solid var(--basicDarkColor);
+}
+
+.order__counter button:hover {
+  background-color: var(--hoverColor);
+  color: var(--basicWhiteColor);
+}
+
+.order__counter button:focus {
+  background-color: var(--hoverColor);
+  color: var(--basicWhiteColor);
+  outline: none;
+}
+
+.order__counter button:active {
+  background-color: var(--secondPrimaryColor);
+  color: var(--basicWhiteColor);
+}
+
+.order__button button {
+  padding: 1px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 24px;
+  line-height: 38px;
+  color: var(--basicWhiteColor);
+  background-color: var(--secondPrimaryColor);
+}
+
+.order__button button:hover {
+  background-color: var(--hoverColor);
+}
+
+.order__button button:focus-visible {
+  background-color: var(--hoverColor);
+  outline: none;
+}
+
+.order__button button:active {
+  background-color: var(--basicWhiteColor);
+  color: var(--secondPrimaryColor);
+  outline: 2px solid var(--secondPrimaryColor);
+}
+
+.order-favorite {
+  @media (max-width: 490px) {
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
+}
+
+.favorite {
+  color: var(--basicGreyColor);
+  cursor: pointer;
+  transition: color 0.1s ease-in-out;
+}
+
+.favorite:hover {
+  fill: var(--hoverColor);
+  color: var(--hoverColor);
+}
+
+.favorite:active {
+  fill: var(--secondPrimaryColor);
+  color: var(--secondPrimaryColor);
+}
+
+.favorite-active {
+  fill: var(--secondPrimaryColor);
+  color: var(--secondPrimaryColor);
+}
+
+/* ------------------Catalog------------------ */
+
+.catalog {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card {
+  flex: 0 0 220px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 272px;
+  background-color: transparent;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--basicDarkColor);
+  transition: background-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  cursor: pointer;
+
+  @media (max-width: 506px) {
+    flex: 0 0 150px;
+  }
+}
+
+.card:hover,
+.card:focus {
+  background-color: var(--basicLightGreyColor);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--secondPrimaryColor);
+}
+
+.card__favorite {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.card__img {
+  padding: 28px 0;
+}
+
+.card p {
+  font-size: 18px;
+  margin: 0;
+  padding: 10px 0 20px 0;
+}
+
+.card span {
+  color: var(--basicDarkGreyColor);
+}
