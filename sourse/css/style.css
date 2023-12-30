@@ -19,19 +19,22 @@
   overflow: hidden;
 }
 
+html {
+  font-size: 14px;
+}
+
 body {
   color: var(--basicDarkColor);
   margin: 0;
   font-family: 'Roboto', sans-serif, Arial;
-  font-size: 14px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.71rem;
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 1.29rem;
 }
 
 h1,
@@ -201,7 +204,7 @@ button {
 }
 
 .order__price {
-  font-size: 36px;
+  font-size: 2.57rem;
   color: var(--secondPrimaryColor);
 }
 
@@ -222,7 +225,7 @@ button {
 
 .order__counter {
   display: flex;
-  font-size: 24px;
+  font-size: 1.71rem;
   line-height: 38px;
   transition: color 0.1s ease-in-out;
 }
@@ -267,7 +270,7 @@ button {
   padding: 1px 20px;
   border: none;
   border-radius: 10px;
-  font-size: 24px;
+  font-size: 1.71rem;
   line-height: 38px;
   color: var(--basicWhiteColor);
   background-color: var(--secondPrimaryColor);
@@ -367,7 +370,7 @@ button {
 }
 
 .card p {
-  font-size: 18px;
+  font-size: 1.29rem;
   margin: 0;
   padding: 10px 0 20px 0;
 }
