@@ -299,17 +299,26 @@ button {
   cursor: pointer;
 }
 
-.favorite:hover {
+.favorite:hover svg {
   fill: var(--hoverColor);
   color: var(--hoverColor);
 }
 
-.favorite:active {
+.favorite:focus-visible {
+  outline: none;
+}
+
+.favorite:active svg {
   fill: var(--secondPrimaryColor);
   color: var(--secondPrimaryColor);
 }
 
-.favorite-active {
+.favorite:focus-visible svg {
+  fill: var(--hoverColor);
+  color: var(--hoverColor);
+}
+
+.favorite-active svg {
   fill: var(--secondPrimaryColor);
   color: var(--secondPrimaryColor);
 }
@@ -348,8 +357,10 @@ button {
 }
 
 .card:hover,
-.card:focus {
+.card:focus,
+.card:focus-visible {
   box-shadow: 0.14rem 0.14rem 0.36rem 0rem var(--shadowDarkColor);
+  outline: none;
   background-color: var(--basicLightGreyColor);
 }
 
