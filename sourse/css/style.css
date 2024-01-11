@@ -41,18 +41,10 @@ button {
   cursor: pointer;
 }
 
-.wrapper {
-  padding: 1.14rem 1.71rem;
-}
-
 .header {
   display: flex;
-  padding-bottom: 1.71rem;
-  justify-content: space-between;
-}
-
-.header-product {
   padding: 1.14rem 1.71rem 1.71rem;
+  justify-content: space-between;
 }
 
 .search {
@@ -119,14 +111,14 @@ button {
   color: var(--secondPrimaryColor);
 }
 
-.account__icon {
+.account-icon {
   padding: 0.57rem;
   transform: translateY(0.14rem);
 }
 
-.product__container {
+.product-container {
   display: flex;
-  padding: 0 1.71rem;
+  padding: 0 1.71rem 1.71rem;
 
   @media (max-width: 62.14rem) {
     padding: 0;
@@ -134,7 +126,7 @@ button {
   }
 }
 
-.product__img {
+.product-img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,7 +143,7 @@ button {
   }
 }
 
-.product__info {
+.product-info {
   padding-left: 1.14rem;
 
   @media (max-width: 62.14rem) {
@@ -159,16 +151,16 @@ button {
   }
 }
 
-.product__text {
+.product-text {
   padding-bottom: 1.7rem;
 }
 
-.product__text span {
+.product-text span {
   display: inline-block;
 }
 
-.product__text h2,
-.product__text h3 {
+.product-text h2,
+.product-text h3 {
   padding-bottom: 1.14rem;
 
   @media (max-width: 62.14rem) {
@@ -176,7 +168,7 @@ button {
   }
 }
 
-.product__text span:first-of-type {
+.product-text span:first-of-type {
   padding-bottom: 1.14rem;
 }
 
@@ -197,12 +189,12 @@ button {
   }
 }
 
-.order__price {
+.order-price {
   font-size: 2.57rem;
   color: var(--secondPrimaryColor);
 }
 
-.order__add-wrapper {
+.add-wrapper {
   display: flex;
   gap: 1.14rem;
 
@@ -217,19 +209,19 @@ button {
   }
 }
 
-.order__counter {
+.counter {
   display: flex;
   font-size: 1.71rem;
   line-height: 2.71rem;
   transition: color 0.1s ease-in-out;
 }
 
-.order__counter svg {
+.counter svg {
   padding: 0.35rem;
   transform: translateY(0.1rem);
 }
 
-.order__count {
+.count {
   padding: 0 3.71rem;
   text-align: center;
   border: 0.1rem solid var(--basicDarkColor);
@@ -239,28 +231,28 @@ button {
   }
 }
 
-.order__counter button {
+.counter button {
   color: var(--secondPrimaryColor);
   border: 0.1rem solid var(--basicDarkColor);
 }
 
-.order__counter button:hover {
+.counter button:hover {
   color: var(--basicWhiteColor);
   background-color: var(--hoverColor);
 }
 
-.order__counter button:focus {
+.counter button:focus {
   outline: none;
   color: var(--basicWhiteColor);
   background-color: var(--hoverColor);
 }
 
-.order__counter button:active {
+.counter button:active {
   color: var(--basicWhiteColor);
   background-color: var(--secondPrimaryColor);
 }
 
-.order__button button {
+.order-button button {
   padding: 0.1rem 1.43rem;
   font-size: 1.71rem;
   line-height: 2.71rem;
@@ -270,16 +262,16 @@ button {
   background-color: var(--secondPrimaryColor);
 }
 
-.order__button button:hover {
+.order-button button:hover {
   background-color: var(--hoverColor);
 }
 
-.order__button button:focus-visible {
+.order-button button:focus-visible {
   outline: none;
   background-color: var(--hoverColor);
 }
 
-.order__button button:active {
+.order-button button:active {
   outline: 0.14rem solid var(--secondPrimaryColor);
   color: var(--secondPrimaryColor);
   background-color: var(--basicWhiteColor);
@@ -330,6 +322,7 @@ button {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.14rem;
+  padding: 0 1.71rem 1.71rem;
 }
 
 .card {
@@ -364,13 +357,13 @@ button {
   background-color: var(--basicLightGreyColor);
 }
 
-.card__favorite {
+.card-favorite {
   position: absolute;
   top: 0.57rem;
   right: 0.57rem;
 }
 
-.card__img {
+.card-img {
   padding: 2rem 0;
 }
 

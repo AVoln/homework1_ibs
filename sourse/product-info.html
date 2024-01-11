@@ -18,10 +18,9 @@
 </head>
 
 <body>
-  <header class="header header-product">
-    <div class="header__form-wrapper search">
-      <svg class="search__search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+  <header class="header">
+    <div class="search">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g>
           <path
             d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z"
@@ -32,9 +31,9 @@
         <input type="text" placeholder="Search products">
       </form>
     </div>
-    <div class="header__account-wrapper account">
-      <button class="account__cart">
-        <svg class="account__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+    <div class="account">
+      <button type="button">
+        <svg class="account-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <g>
             <path
@@ -43,8 +42,8 @@
           </g>
         </svg>
       </button>
-      <button class="account__person">
-        <svg class="account__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      <button type="button">
+        <svg class="account-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <g>
             <path
@@ -57,12 +56,12 @@
   </header>
 
   <main>
-    <div class="product__container">
-      <div class="product__img">
+    <div class="product-container">
+      <div class="product-img">
         <img src="img/product.png" alt="Фото товара." width="150" height="200">
       </div>
-      <div class="product__info">
-        <div class="product__text">
+      <div class="product-info">
+        <div class="product-text">
           <h2>G Home</h2>
           <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices ante sit amet mollis luctus.
             Morbi semper, tellus in finibus tristique, purus odio sodales sem, vitae dignissim enim metus vel purus.
@@ -79,12 +78,12 @@
             magna. Vestibulum et felis id nisi dapibus viverra vel vitae nisl. Morbi lobortis nunc turpis, sed
             tincidunt quam cursus nec. Morbi eget lorem dolor.</span>
         </div>
-        <div class="product__order order">
-          <div class="order__price">
+        <div class="order">
+          <div class="order-price">
             $129
           </div>
-          <div class="order__add-wrapper">
-            <div class="order__counter">
+          <div class="add-wrapper">
+            <div class="counter">
               <button type="button">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g>
@@ -92,7 +91,7 @@
                   </g>
                 </svg>
               </button>
-              <div class="order__count">1</div>
+              <div class="count">1</div>
               <button type="button">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g>
@@ -101,11 +100,11 @@
                 </svg>
               </button>
             </div>
-            <div class="order__button">
+            <div class="order-button">
               <button type="button">Add to cart</button>
             </div>
           </div>
-          <button class="order__favorite favorite">
+          <button type="button" class="order-favorite favorite">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g>
                 <path
