@@ -9,17 +9,6 @@
   --hoverColor: #fbb667;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 0.1rem;
-  height: 0.1rem;
-  margin: -0.1rem;
-  padding: 0;
-  border: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 html {
   font-size: 0.875rem;
 }
@@ -150,6 +139,7 @@ button {
   justify-content: center;
   align-items: center;
   min-height: 21.43rem;
+  min-width: 21.43rem;
   border: 0.1rem solid var(--basicLightGreyColor);
 
   @media (max-width: 62.14rem) {
