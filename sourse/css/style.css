@@ -67,11 +67,11 @@ button {
   padding: 0.57rem;
 }
 
-.search form {
+.search > form {
   padding: 0.57rem;
 }
 
-.search input {
+.search > form > input {
   border: none;
 
   @media (max-width: 25rem) {
@@ -79,15 +79,15 @@ button {
   }
 }
 
-.search input::placeholder {
+.search > form > input::placeholder {
   color: var(--basicDarkColor);
 }
 
-.search input:focus {
+.search > form > input:focus {
   outline: none;
 }
 
-.search input:focus::placeholder {
+.search > form > input:focus::placeholder {
   color: transparent;
 }
 
@@ -97,16 +97,16 @@ button {
   margin-right: -0.57rem;
 }
 
-.account button {
+.account > button {
   border-radius: 0.71rem;
   transition: color 0.1s ease-in-out;
 }
 
-.account button:hover {
+.account > button:hover {
   color: var(--secondPrimaryColor);
 }
 
-.account button:focus {
+.account > button:focus {
   outline: none;
   color: var(--secondPrimaryColor);
 }
@@ -121,7 +121,7 @@ button {
   padding: 0 1.71rem 1.71rem;
 
   @media (max-width: 62.14rem) {
-    padding: 0;
+    padding: 0 0 1.71rem;
     flex-direction: column;
   }
 }
@@ -155,12 +155,12 @@ button {
   padding-bottom: 1.7rem;
 }
 
-.product-text span {
+.product-text > span {
   display: inline-block;
 }
 
-.product-text h2,
-.product-text h3 {
+.product-text > h2,
+.product-text > h3 {
   padding-bottom: 1.14rem;
 
   @media (max-width: 62.14rem) {
@@ -168,7 +168,7 @@ button {
   }
 }
 
-.product-text span:first-of-type {
+.product-text > span:first-of-type {
   padding-bottom: 1.14rem;
 }
 
@@ -216,7 +216,7 @@ button {
   transition: color 0.1s ease-in-out;
 }
 
-.counter svg {
+.counter > button > svg {
   padding: 0.35rem;
   transform: translateY(0.1rem);
 }
@@ -231,28 +231,28 @@ button {
   }
 }
 
-.counter button {
+.counter > button {
   color: var(--secondPrimaryColor);
   border: 0.1rem solid var(--basicDarkColor);
 }
 
-.counter button:hover {
+.counter > button:hover {
   color: var(--basicWhiteColor);
   background-color: var(--hoverColor);
 }
 
-.counter button:focus {
+.counter > button:focus {
   outline: none;
   color: var(--basicWhiteColor);
   background-color: var(--hoverColor);
 }
 
-.counter button:active {
+.counter > button:active {
   color: var(--basicWhiteColor);
   background-color: var(--secondPrimaryColor);
 }
 
-.order-button button {
+.order-button > button {
   padding: 0.1rem 1.43rem;
   font-size: 1.71rem;
   line-height: 2.71rem;
@@ -262,16 +262,16 @@ button {
   background-color: var(--secondPrimaryColor);
 }
 
-.order-button button:hover {
+.order-button > button:hover {
   background-color: var(--hoverColor);
 }
 
-.order-button button:focus-visible {
+.order-button > button:focus-visible {
   outline: none;
   background-color: var(--hoverColor);
 }
 
-.order-button button:active {
+.order-button > button:active {
   outline: 0.14rem solid var(--secondPrimaryColor);
   color: var(--secondPrimaryColor);
   background-color: var(--basicWhiteColor);
@@ -367,12 +367,12 @@ button {
   padding: 2rem 0;
 }
 
-.card p {
+.card > p {
   margin: 0;
   padding: 0.71rem 0 1.42rem 0;
   font-size: 1.29rem;
 }
 
-.card span {
+.card > span {
   color: var(--basicDarkGreyColor);
 }
