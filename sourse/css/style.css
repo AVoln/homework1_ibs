@@ -41,6 +41,10 @@ button {
   cursor: pointer;
 }
 
+#main-svg {
+  position: absolute;
+}
+
 .header {
   display: flex;
   padding: 1.14rem 1.71rem 1.71rem;
