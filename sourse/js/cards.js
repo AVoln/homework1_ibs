@@ -2,7 +2,7 @@ import { getCards, getCardById } from './api.js';
 
 const CurrencyMap = {
   USD: '$'
-}
+};
 
 const cardTemplate = document.querySelector('#card').content;
 const container = document.querySelector('.cards');
@@ -43,6 +43,15 @@ const createCard = (card) => {
       localStorage.setItem('card', JSON.stringify(response.content));
       window.location.href = './product-info.html';
     })
+  });
+
+  cardContainer.addEventListener('keyup', (e) => {
+    if (e.code === 'Enter') {
+      getCardById(id).then(response => {
+        localStorage.setItem('card', JSON.stringify(response.content));
+        window.location.href = './product-info.html';
+      });
+    }
   });
 
   cardContainer.id = id;
