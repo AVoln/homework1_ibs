@@ -42,6 +42,7 @@
       </g>
     </defs>
   </svg>
+
   <header class="header">
     <div class="search">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -66,155 +67,26 @@
   </header>
 
   <main class="catalog">
-    <div class="card">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <a href="product-info.html">
-        <span>$129</span>
-      </a>
-    </div>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite favorite-active">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
+    <section class="cards"></section>
   </main>
 
-  <script src="js/catalog.js"></script>
+  <template id="card">
+    <div class="card">
+      <button class="card-favorite favorite" type="button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <use href="#like" />
+        </svg>
+      </button>
+      <div class="img-container">
+        <img class="card-img" src="http://localhost:3006" alt="Фото товара." width="59" height="79">
+      </div>
+      <p class="card-name">G Home</p>
+      <span class="card-description"></span>
+      <span class="card-price">$129</span>
+    </div>
+  </template>
+
+  <script src="js/index.js" type="module"></script>
 </body>
 
 </html>
