@@ -72,11 +72,7 @@ button {
   padding: 0.57rem;
 }
 
-.search > form {
-  padding: 0.57rem;
-}
-
-.search > form > input {
+.search > input {
   border: none;
 
   @media (max-width: 25rem) {
@@ -84,15 +80,15 @@ button {
   }
 }
 
-.search > form > input::placeholder {
+.search > input::placeholder {
   color: var(--basicDarkColor);
 }
 
-.search > form > input:focus {
+.search > input:focus {
   outline: none;
 }
 
-.search > form > input:focus::placeholder {
+.search > input:focus::placeholder {
   color: transparent;
 }
 

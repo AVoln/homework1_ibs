@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catalog</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
   <link rel="icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <svg id="main-svg">
+  <svg id="main-svg" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <g id="search">
         <path
@@ -48,9 +48,7 @@
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <use href="#search" />
       </svg>
-      <form method="post" action="#">
-        <input type="text" placeholder="Search products">
-      </form>
+      <input type="text" id="input" placeholder="Search products">
     </div>
     <div class="account">
       <button type="button">
