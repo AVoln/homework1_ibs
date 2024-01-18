@@ -2,7 +2,7 @@ class HystModal {
   constructor(props) {
     let defaultConfig = {
       backscroll: true,
-      linkAttributeName: 'data-hystmodal',
+      linkAttributeName: 'data-modal-error',
       closeOnOverlay: true,
       closeOnEsc: true,
       closeOnButton: true,
@@ -47,7 +47,7 @@ class HystModal {
 
     if (!HystModal._shadow) {
       HystModal._shadow = document.createElement('button');
-      HystModal._shadow.classList.add('hystmodal__shadow');
+      HystModal._shadow.classList.add('modal-shadow');
       document.body.appendChild(HystModal._shadow);
     }
     this.eventsFeeler();
@@ -72,12 +72,12 @@ class HystModal {
 
     if (this.config.closeOnOverlay) {
       document.addEventListener('mousedown', function (e) {
-        if (!this._isMoved && (e.target instanceof Element) && !e.target.classList.contains('hystmodal__wrap')) return;
+        if (!this._isMoved && (e.target instanceof Element) && !e.target.classList.contains('modal-wrapper')) return;
         this._overlayChecker = true;
       }.bind(this));
 
       document.addEventListener('mouseup', function (e) {
-        if (!this._isMoved && (e.target instanceof Element) && this._overlayChecker && e.target.classList.contains('hystmodal__wrap')) {
+        if (!this._isMoved && (e.target instanceof Element) && this._overlayChecker && e.target.classList.contains('modal-wrapper')) {
           e.preventDefault();
           !this._overlayChecker;
           this.close();
@@ -118,11 +118,11 @@ class HystModal {
       return;
     }
     this.openedWindow = this._nextWindows;
-    this._modalBlock = this.openedWindow.querySelector('.hystmodal__window');
+    this._modalBlock = this.openedWindow.querySelector('.modal-window');
     this.config.beforeOpen(this);
     this._bodyScrollControl();
-    HystModal._shadow.classList.add("hystmodal__shadow--show");
-    this.openedWindow.classList.add("hystmodal--active");
+    HystModal._shadow.classList.add("modal-shadow--show");
+    this.openedWindow.classList.add("modal-error--active");
     this.openedWindow.setAttribute('aria-hidden', 'false');
     if (this.config.catchFocus) this.focusContol();
     this.isOpened = true;
@@ -133,21 +133,21 @@ class HystModal {
       return;
     }
     if (this.config.waitTransitions) {
-      this.openedWindow.classList.add("hystmodal--moved");
+      this.openedWindow.classList.add("modal-error--moved");
       this._isMoved = true;
       this.openedWindow.addEventListener("transitionend", this._closeAfterTransition);
-      this.openedWindow.classList.remove("hystmodal--active");
+      this.openedWindow.classList.remove("modal-error--active");
     } else {
-      this.openedWindow.classList.remove("hystmodal--active");
+      this.openedWindow.classList.remove("modal-error--active");
       this._closeAfterTransition();
     }
   }
 
   _closeAfterTransition() {
-    this.openedWindow.classList.remove("hystmodal--moved");
+    this.openedWindow.classList.remove("modal-error--moved");
     this.openedWindow.removeEventListener("transitionend", this._closeAfterTransition);
     this._isMoved = false;
-    HystModal._shadow.classList.remove("hystmodal__shadow--show");
+    HystModal._shadow.classList.remove("modal-shadow--show");
     this.openedWindow.setAttribute('aria-hidden', 'true');
 
     if (this.config.catchFocus) this.focusContol();
@@ -199,7 +199,7 @@ class HystModal {
 
     let html = document.documentElement;
     if (this.isOpened === true) {
-      html.classList.remove("hystmodal__opened");
+      html.classList.remove("modal-opened");
       html.style.marginRight = "";
       fixedSelectors.map((el) => {
         el.style.marginRight = "";
@@ -218,12 +218,12 @@ class HystModal {
         el.style.marginRight = parseInt(getComputedStyle(el).marginRight) + marginSize + "px";
       });
     }
-    html.classList.add("hystmodal__opened");
+    html.classList.add("modal-opened");
   }
 }
 
 const myModal = new HystModal({
-  linkAttributeName: 'data-hystmodal',
+  linkAttributeName: 'data-modal-error',
   catchFocus: true,
   waitTransitions: true,
   closeOnEsc: true,

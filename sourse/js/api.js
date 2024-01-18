@@ -1,7 +1,7 @@
 import myModal from './modalError.js'
 
 const ROOT_URL = new URL('http://localhost:3006');
-const modalErrorText = document.querySelector('.modal-error');
+const modalErrorText = document.querySelector('.modal-text');
 
 axios.interceptors.response.use((response) => {
   return response;
