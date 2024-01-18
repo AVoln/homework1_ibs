@@ -66,6 +66,14 @@
 
   <main class="catalog">
     <section class="cards"></section>
+    <div class="hystmodal" id="myModal" aria-hidden="true">
+      <div class="hystmodal__wrap">
+        <div class="hystmodal__window" role="dialog" aria-modal="true">
+          <button data-hystclose class="hystmodal__close">Закрыть</button>
+          <span class="modal-error"></span>
+        </div>
+      </div>
+    </div>
   </main>
 
   <template id="card">
@@ -85,6 +93,8 @@
   </template>
 
   <script src="js/index.js" type="module"></script>
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="js/modalError.js" type="module"></script>
 </body>
 
 </html>
