@@ -1,0 +1,212 @@
+:root {
+  --basicDarkColor: #323232;
+  --basicWhiteColor: #ffffff;
+  --basicGreyColor: #959595;
+  --basicLightGreyColor: #f2f2f2;
+  --basicDarkGreyColor: #545454;
+  --shadowDarkColor: #00000026;
+  --secondPrimaryColor: #e97f03;
+  --hoverColor: #fbb667;
+}
+
+html {
+  font-size: 0.875rem;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif, Arial;
+  color: var(--basicDarkColor);
+}
+
+h2 {
+  font-size: 1.71rem;
+}
+
+h3 {
+  font-size: 1.29rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#main-svg {
+  position: absolute;
+  z-index: -1;
+}
+
+.header {
+  display: flex;
+  padding: 1.14rem 1.71rem 1.71rem;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.14rem solid transparent;
+  transition: color 0.1s ease-in-out, border-bottom 0.1s ease-in-out;
+}
+
+.search:focus-within {
+  border-bottom: 0.14rem solid var(--secondPrimaryColor);
+  color: var(--secondPrimaryColor);
+}
+
+.search:hover {
+  color: var(--secondPrimaryColor);
+}
+
+.search__icon {
+  padding: 0.57rem;
+}
+
+.search > input {
+  border: none;
+
+  @media (max-width: 25rem) {
+    width: 9.1rem;
+  }
+}
+
+.search > input::placeholder {
+  color: var(--basicDarkColor);
+}
+
+.search > input:focus {
+  outline: none;
+}
+
+.search > input:focus::placeholder {
+  color: transparent;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  margin-right: -0.57rem;
+}
+
+.account > button {
+  border-radius: 0.71rem;
+  transition: color 0.1s ease-in-out;
+}
+
+.account > button:hover {
+  color: var(--secondPrimaryColor);
+}
+
+.account > button:focus {
+  outline: none;
+  color: var(--secondPrimaryColor);
+}
+
+.account-icon {
+  padding: 0.57rem;
+  transform: translateY(0.14rem);
+}
+
+.cards {
+  display: flex;
+  padding: 0 1.71rem 1.71rem;
+  gap: 1.14rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex: 0 0 15.71rem;
+  min-height: 19.43rem;
+  padding: 1.71rem;
+  border-radius: 0.86rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  color: var(--basicDarkColor);
+  background-color: transparent;
+  transition: background-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  cursor: pointer;
+
+  @media (max-width: 45rem) {
+    flex: 0 0 12rem;
+  }
+
+  @media (max-width: 35.71rem) {
+    flex: 0 0 9.3rem;
+  }
+}
+
+.card:hover,
+.card:focus,
+.card:focus-visible {
+  box-shadow: 0.14rem 0.14rem 0.36rem 0rem var(--shadowDarkColor);
+  outline: none;
+  background-color: var(--basicLightGreyColor);
+}
+
+.card-favorite {
+  position: absolute;
+  top: 0.57rem;
+  right: 0.57rem;
+}
+
+.card-img {
+  padding: 2rem 0;
+}
+
+.card > p {
+  margin: 0;
+  padding: 0.71rem 0 1.42rem 0;
+  font-size: 1.29rem;
+  color: var(--basicDarkColor);
+}
+
+.card-price {
+  padding-top: 1rem;
+  color: var(--basicDarkGreyColor);
+}
+.favorite {
+  z-index: 2;
+  transition: color 0.1s ease-in-out;
+  color: var(--basicGreyColor);
+  cursor: pointer;
+}
+
+.favorite:hover svg {
+  fill: var(--hoverColor);
+  color: var(--hoverColor);
+}
+
+.favorite:focus-visible {
+  outline: none;
+}
+
+.favorite:active svg {
+  fill: var(--secondPrimaryColor);
+  color: var(--secondPrimaryColor);
+}
+
+.favorite:focus-visible svg {
+  fill: var(--hoverColor);
+  color: var(--hoverColor);
+}
+
+.favorite-active svg {
+  fill: var(--secondPrimaryColor);
+  color: var(--secondPrimaryColor);
+}

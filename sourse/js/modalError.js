@@ -1,4 +1,4 @@
-class HystModal {
+export default class HystModal {
   constructor(props) {
     let defaultConfig = {
       backscroll: true,
@@ -221,12 +221,3 @@ class HystModal {
     html.classList.add("modal-opened");
   }
 }
-
-const myModal = new HystModal({
-  linkAttributeName: 'data-modal-error',
-  catchFocus: true,
-  waitTransitions: true,
-  closeOnEsc: true,
-});
-
-export default myModal;

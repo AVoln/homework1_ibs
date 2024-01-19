@@ -1,7 +1,13 @@
 import { getCards, getCardById } from './api.js';
+import { CurrencyMap } from "./constants.js";
+import { getCardByIdController } from "./api.js";
 
-const CurrencyMap = {
-  USD: '$'
+const toNormalizeValue = (value) => {
+  if (!value) {
+    return '';
+  }
+
+  return value.trim().toLowerCase();
 };
 
 const cardTemplate = document.querySelector('#card').content;
@@ -11,24 +17,25 @@ const cards = data.content;
 const input = document.querySelector('#input');
 
 const renderCards = (data) => {
-  container.querySelectorAll('.card').forEach((element) => {
-    element.remove();
-  });
+  container.innerHTML = '';
 
   const fragment = document.createDocumentFragment();
 
-  data.forEach(element => {
+  data.forEach((element) => {
     const card = createCard(element);
     fragment.append(card);
   });
   container.append(fragment);
 };
 
-input.addEventListener('change', (e) => {
-  const inputValue = e.target.value;
-  const items = cards.filter(card => {
+input.addEventListener('change', ({ target }) => {
+  const inputValue = target.value;
+  const normalizedValue = toNormalizeValue(inputValue);
 
-    return card.name.trim().toLowerCase().includes(inputValue.trim().toLowerCase());
+  const items = cards.filter((card) => {
+    const normalizedName = toNormalizeValue(card.name);
+
+    return normalizedName.includes(normalizedValue);
   });
   renderCards(items);
 });
@@ -38,21 +45,22 @@ const createCard = (card) => {
   const template = cardTemplate.cloneNode(true);
   const cardContainer = template.querySelector('.card');
 
-  cardContainer.addEventListener('click', (e) => {
-    getCardById(id).then(response => {
-      localStorage.setItem('card', JSON.stringify(response.content));
-      window.location.href = './product-info.html';
-    })
-  });
+  const goToCardHandler = () => {
 
-  cardContainer.addEventListener('keyup', (e) => {
-    if (e.code === 'Enter') {
-      getCardById(id).then(response => {
-        localStorage.setItem('card', JSON.stringify(response.content));
-        window.location.href = './product-info.html';
-      });
+    getCardById(id).then((response) => {
+      localStorage.setItem('card', JSON.stringify(response.content));
+      window.location.href = 'product-info.html';
+      getCardByIdController.abort();
+    })
+  };
+
+  cardContainer.addEventListener('click', goToCardHandler, { once: true });
+
+  cardContainer.addEventListener('keyup', ({ code }) => {
+    if (code === 'Enter') {
+      goToCardHandler();
     }
-  });
+  }, { once: true });
 
   cardContainer.id = id;
   template.querySelector('.card-name').textContent = name;

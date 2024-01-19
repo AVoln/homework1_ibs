@@ -1,6 +1,4 @@
-const CurrencyMap = {
-  USD: '$'
-}
+import { CurrencyMap } from "./constants.js";
 
 const cardIdTemplate = document.querySelector('#cardId').content;
 const container = document.querySelector('.product-container');

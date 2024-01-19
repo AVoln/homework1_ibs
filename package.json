@@ -1,14 +1,22 @@
 {
   "dependencies": {
-    "axios": "^1.6.5"
+    "axios": "^1.6.5",
+    "webpack-dev-server": "^4.15.1"
   },
   "name": "homework1",
   "description": "",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "css-loader": "^6.9.0",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack serve",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -20,5 +28,5 @@
   "bugs": {
     "url": "https://github.com/AVoln/homework1_ibs/issues"
   },
-  "homepage": "https://github.com/AVoln/homework1_ibs#readme"
+  "homepage": "http://localhost:3006"
 }

@@ -1,54 +1,51 @@
-// import { renderCardInfo } from "./product-info";
-
 const order = document.querySelector('.order');
 const counters = order.querySelectorAll('.counter-button');
+const data = JSON.parse(localStorage.getItem('card'));
 
-// получение чисел из строки
-const getNumber = (value) => {
-  const array = value.split('');
-  const numbers = array.filter((item) => {
-    const number = parseInt(item);
+const createPrice = ({ price }) => {
+  const totalPrice = order.querySelector('.order-price');
+  let totalPriceValue = totalPrice.textContent;
 
-    return Boolean(number === 0 || number);
-  });
+  totalPriceValue = price.value;
 
-  return numbers.join('');
-};
+  return totalPriceValue;
+}
 
-const getCounterValue = (currentValue, counter) => {
+const getCounterValue = (countValue, counter) => {
   if (counter.classList.contains('counter-button--plus')) {
-    return currentValue + 1;
+    return countValue + 1;
   }
 
-  return currentValue - 1;
+  return countValue - 1;
 };
 
-const getTotalPrice = (totalPriceValue, counter) => {
+const getTotalPrice = (totalPriceValue, counter, counterValue) => {
   if (counter.classList.contains('counter-button--plus')) {
-    return Number(getNumber(totalPriceValue)) + 129;
+    return totalPriceValue * counterValue;
   }
 
-  return Number(getNumber(totalPriceValue)) - 129;
+  return totalPriceValue * counterValue;
 };
 
 if (counters) {
-  counters.forEach(counter => {
-    counter.addEventListener('click', e => {
-      const target = e.target;
-      const currentValue = Number(target.closest('.counter').querySelector('.count').innerHTML);
-      const counterValue = getCounterValue(currentValue, counter);
-      const totalPriceValue = target.closest('.order').querySelector('.order-price').innerHTML;
-      const totalPrice = getTotalPrice(totalPriceValue, counter);
+  counters.forEach((counter) => {
+    counter.addEventListener('click', ({ target }) => {
+      const count = target.closest('.counter').querySelector('.count').textContent;
+      let countValue = Number(count);
+      let counterValue = getCounterValue(countValue, counter);
+      let totalPriceValue = createPrice(data);
+      let totalPrice = getTotalPrice(totalPriceValue, counter, counterValue);
 
-      if (counterValue <= 0) {
-        target.closest('.counter').querySelector('.count').innerHTML = 1;
-
-        return;
+      if (countValue <= 0) {
+        return countValue = 1;
       }
 
-      target.closest('.counter').querySelector('.count').innerHTML = counterValue;
-      target.closest('.order').querySelector('.order-price').innerHTML = `$${totalPrice}`
+      if (totalPrice <= 0) {
+        return totalPrice = 129;
+      }
+
+      target.closest('.counter').querySelector('.count').textContent = counterValue;
+      target.closest('.order').querySelector('.order-price').textContent = `$${totalPrice}`;
     });
   });
 }
-
