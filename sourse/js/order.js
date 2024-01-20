@@ -19,11 +19,7 @@ const getCounterValue = (countValue, counter) => {
   return countValue - 1;
 };
 
-const getTotalPrice = (totalPriceValue, counter, counterValue) => {
-  if (counter.classList.contains('counter-button--plus')) {
-    return totalPriceValue * counterValue;
-  }
-
+const getTotalPrice = (totalPriceValue, counterValue) => {
   return totalPriceValue * counterValue;
 };
 
