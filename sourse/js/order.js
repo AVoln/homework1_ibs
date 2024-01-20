@@ -26,11 +26,12 @@ const getTotalPrice = (totalPriceValue, counterValue) => {
 if (counters) {
   counters.forEach((counter) => {
     counter.addEventListener('click', ({ target }) => {
-      const count = target.closest('.counter').querySelector('.count').textContent;
+      const countContainer = target.closest('.counter').querySelector('.count');
+      const count = countContainer.textContent;
       let countValue = Number(count);
       let counterValue = getCounterValue(countValue, counter);
       let totalPriceValue = createPrice(data);
-      let totalPrice = getTotalPrice(totalPriceValue, counter, counterValue);
+      let totalPrice = getTotalPrice(totalPriceValue, counterValue);
 
       if (countValue <= 0) {
         return countValue = 1;
@@ -40,7 +41,7 @@ if (counters) {
         return totalPrice = 129;
       }
 
-      target.closest('.counter').querySelector('.count').textContent = counterValue;
+      countContainer.textContent = counterValue;
       target.closest('.order').querySelector('.order-price').textContent = `$${totalPrice}`;
     });
   });
