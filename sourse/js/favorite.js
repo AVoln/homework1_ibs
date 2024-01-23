@@ -1,4 +1,4 @@
-import { getCards } from './api.js';
+import { getCards } from './api/get-cards.js';
 
 const data = await getCards();
 

@@ -1,0 +1,54 @@
+:root {
+  --basicBlackColor: #000000;
+  --basicDarkColor: #323232;
+  --basicWhiteColor: #ffffff;
+  --basicGreyColor: #959595;
+  --basicLightGreyColor: #f2f2f2;
+  --basicDarkGreyColor: #545454;
+  --shadowDarkColor: #00000026;
+  --secondPrimaryColor: #e97f03;
+  --hoverColor: #fbb667;
+}
+
+html {
+  font-size: 0.875rem;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif, Arial;
+  color: var(--basicDarkColor);
+}
+
+h2 {
+  font-size: 1.71rem;
+}
+
+h3 {
+  font-size: 1.29rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#main-svg {
+  position: absolute;
+  z-index: -1;
+}
+
+.header {
+  display: flex;
+  padding: 1.14rem 1.71rem 1.71rem;
+  justify-content: space-between;
+}

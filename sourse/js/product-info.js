@@ -1,8 +1,13 @@
+import { getCardById } from "./api/get-card.js";
 import { CurrencyMap } from "./constants.js";
+import { renderCounter } from "./order.js";
 
 const cardIdTemplate = document.querySelector('#cardId').content;
 const container = document.querySelector('.product-container');
-const data = JSON.parse(localStorage.getItem('card'));
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+
+const id = params.get("id");
 
 const createCardInfo = (card) => {
   const { id, name, description, info, details, like, picture, price } = card;
@@ -31,5 +36,7 @@ const renderCardInfo = (data) => {
   container.append(fragment);
 };
 
-renderCardInfo(data);
-
+getCardById(id).then(({ content }) => {
+  renderCardInfo(content)
+  renderCounter(content)
+})

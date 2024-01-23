@@ -1,6 +1,6 @@
 export const CurrencyMap = {
-  USD: '$'
-}
+  USD: '$',
+};
 
 export const BASE_URL = 'http://localhost:3006';
 

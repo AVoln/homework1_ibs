@@ -1,3 +1,9 @@
+:root {
+  --basicBlackColor: #000000;
+  --basicWhiteColor: #ffffff;
+  --grayColor: #afb3b9;
+}
+
 .modal-opened {
   position: fixed;
   right: 0;
@@ -17,7 +23,7 @@
   overflow: hidden;
   border: none;
   opacity: 0;
-  background-color: black;
+  background-color: var(--basicBlackColor);
   transition: opacity 0.15s ease;
   pointer-events: none;
 }
@@ -78,7 +84,7 @@
   overflow: visible;
   transform: scale(0.9);
   opacity: 0;
-  background: #fff;
+  background: var(--basicWhiteColor);
   color: var(--basicDarkColor);
   transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
 }
@@ -108,7 +114,7 @@
 }
 
 .modal-close:focus {
-  outline: 0.14rem dotted #afb3b9;
+  outline: 0.14rem dotted var(--grayColor);
   outline-offset: 0.14rem;
 }
 

@@ -1,14 +1,6 @@
-import { getCards, getCardById } from './api.js';
-import { CurrencyMap } from "./constants.js";
-import { getCardByIdController } from "./api.js";
-
-const toNormalizeValue = (value) => {
-  if (!value) {
-    return '';
-  }
-
-  return value.trim().toLowerCase();
-};
+import { getCards } from './api/get-cards.js';
+import { CurrencyMap } from './constants.js';
+import { toNormalizeValue } from './utils/normalize-value.js';
 
 const cardTemplate = document.querySelector('#card').content;
 const container = document.querySelector('.cards');
@@ -46,12 +38,13 @@ const createCard = (card) => {
   const cardContainer = template.querySelector('.card');
 
   const goToCardHandler = () => {
+    const appendId = () => {
+      const cardId = new URLSearchParams();
+      cardId.append('id', id);
+      window.location.href = `product-info.html?${cardId}`;
+    };
 
-    getCardById(id).then((response) => {
-      localStorage.setItem('card', JSON.stringify(response.content));
-      window.location.href = 'product-info.html';
-      getCardByIdController.abort();
-    })
+    appendId();
   };
 
   cardContainer.addEventListener('click', goToCardHandler, { once: true });
