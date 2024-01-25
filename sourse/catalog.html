@@ -5,20 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catalog</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
   <link rel="icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/catalog.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/theme.css">
 </head>
 
 <body>
-  <svg id="main-svg">
+  <svg id="main-svg" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <g id="search">
         <path
@@ -42,14 +44,13 @@
       </g>
     </defs>
   </svg>
+
   <header class="header">
     <div class="search">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
         <use href="#search" />
       </svg>
-      <form method="post" action="#">
-        <input type="text" placeholder="Search products">
-      </form>
+      <input type="text" id="input" placeholder="Search products">
     </div>
     <div class="account">
       <button type="button">
@@ -66,153 +67,36 @@
   </header>
 
   <main class="catalog">
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
+    <section class="cards"></section>
+    <div class="modal-error" id="myModal" aria-hidden="true">
+      <div class="modal-wrapper">
+        <div class="modal-window" role="dialog" aria-modal="true">
+          <button data-hystclose class="modal-close">Закрыть</button>
+          <p id="modal-text"></p>
+        </div>
       </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite favorite-active">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
-    <a class="card" href="product-info.html">
-      <button class="card-favorite favorite">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <use href="#like" />
-        </svg>
-      </button>
-      <div class="card-img">
-        <img src="img/product-card.png" alt="Фото товара." width="59" height="79">
-      </div>
-      <p>G Home</p>
-      <span>$129</span>
-    </a>
+    </div>
   </main>
 
-  <script src="js/catalog.js"></script>
+  <template id="card">
+    <div class="card" tabindex="0">
+      <button class="card-favorite favorite" type="button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <use href="#like" />
+        </svg>
+      </button>
+      <div class="img-wrapper">
+        <img class="card-img" src="http://localhost:3006" alt="Фото товара." width="59" height="79">
+      </div>
+      <p class="card-name">G Home</p>
+      <span class="card-description"></span>
+      <span class="card-price">$129</span>
+    </div>
+  </template>
+
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="js/index.js" type="module"></script>
+  <script src="js/modal-error.js" type="module"></script>
 </body>
 
 </html>
